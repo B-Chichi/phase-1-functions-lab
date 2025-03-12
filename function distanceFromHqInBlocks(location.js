@@ -7,8 +7,9 @@ function distanceFromHqInBlocks(location) {
   }
 }
 
-function distanceFromHqInFeet(location) {
-  const blocks = distanceFromHqInBlocks(location);
+console.log(distanceFromHqInBlocks(34));
+function distanceFromHqInFeet(pickupLocation) {
+  const blocks = distanceFromHqInBlocks(pickupLocation);
   if (blocks === 0) {
     return 0;
   } else {
@@ -16,8 +17,8 @@ function distanceFromHqInFeet(location) {
   }
 }
 
-function distanceTravelledInFeet(start, end) {
-  const distanceInBlocks = Math.abs(start - end);
+function distanceTravelledInFeet(start, destination) {
+  const distanceInBlocks = Math.abs(start - destination);
   if (distanceInBlocks === 0) {
     return 0;
   } else {
@@ -25,8 +26,8 @@ function distanceTravelledInFeet(start, end) {
   }
 }
 
-function calculatesFarePrice(start, end) {
-  const distance = distanceTravelledInFeet(start, end);
+function calculatesFarePrice(start, destination) {
+  const distance = distanceTravelledInFeet(start, destination);
 
   if (distance <= 400) {
     return 0; 
@@ -35,6 +36,6 @@ function calculatesFarePrice(start, end) {
   } else if (distance > 2000 && distance <= 2500) {
     return 25; 
   } else {
-    return "cannot travel that far";
+    return "cannot travel that far"; 
   }
 }
